@@ -1,15 +1,44 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Create a new button element
-    var button = document.createElement('button');
+     // Create the new HTML content
+    var newContent = `
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1 class="m-0">Ads</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="card card-default">
+                        <div class="card-header">
+                            <h3 class="card-title">
+                                <i class="fas fa-exclamation-triangle"></i>
+                                &nbsp;
+                                Notice
+                            </h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="alert alert-warning alert-dismissible">
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                                <h5><i class="icon fas fa-exclamation-triangle"></i> Note</h5>
+                                Kindly make sure to watch our testing videos.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>`;
+
+    // Append the new content to the .content-wrapper
+    var contentWrapper = document.querySelector('.content-wrapper');
     
-    // Set the button's text
-    button.innerText = 'Click Me'; 
-    
-    // Add styles to the button to make it large
-    button.style.fontSize = '24px';
-    button.style.padding = '10px 20px';
-    button.style.margin = '10px';
-    
-    // Add the button to the top of the body
-    document.body.insertBefore(button, document.body.firstChild);
+    if (contentWrapper) {
+        contentWrapper.insertAdjacentHTML('afterbegin', newContent);
+    }
 });
